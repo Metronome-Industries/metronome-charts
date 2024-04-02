@@ -12,3 +12,15 @@ In order to run multiple instances of the controller in a cluster, we need to be
 add namespace and object selectors to the validating and mutating webhooks, which is not
 supported by the official helm chart, so we've forked it here and added that
 configuration to the template.
+
+## usage
+
+1. add the helm repo
+```
+helm repo add metronome https://metronome-industries.github.io/metronome-charts/
+```
+
+2. template example command:
+```
+helm template metronome/aws-load-balancer-controller --set clusterName=blah --version 1.4.8-metro.0
+```
