@@ -78,7 +78,7 @@ webhooks:
     resources:
     - targetgroupbindings
   sideEffects: None
-// BEGIN ADDED BY METRONOME
+# BEGIN ADDED BY METRONOME
   {{ if .Values.webhookNamespaceSelectors }}
   namespaceSelector:
     matchExpressions:
@@ -95,7 +95,7 @@ webhooks:
     {{- toYaml .Values.objectSelector.matchLabels | nindent 6 }}
     {{- end }}
   {{- end }}
-// END ADDED BY METRONOME
+# END ADDED BY METRONOME
 ---
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
@@ -131,7 +131,7 @@ webhooks:
     resources:
     - targetgroupbindings
   sideEffects: None
-// BEGIN ADDED BY METRONOME
+# BEGIN ADDED BY METRONOME
   {{ if .Values.webhookNamespaceSelectors }}
   namespaceSelector:
     matchExpressions:
@@ -148,7 +148,7 @@ webhooks:
     {{- toYaml .Values.objectSelector.matchLabels | nindent 6 }}
     {{- end }}
   {{- end }}
-// END ADDED BY METRONOME
+# END ADDED BY METRONOME
 - clientConfig:
     {{ if not $.Values.enableCertManager -}}
     caBundle: {{ $tls.caCert }}
@@ -173,7 +173,7 @@ webhooks:
     resources:
     - ingresses
   sideEffects: None
-// BEGIN ADDED BY METRONOME
+# BEGIN ADDED BY METRONOME
   {{ if .Values.webhookNamespaceSelectors }}
   namespaceSelector:
     matchExpressions:
@@ -190,7 +190,7 @@ webhooks:
     {{- toYaml .Values.objectSelector.matchLabels | nindent 6 }}
     {{- end }}
   {{- end }}
-// END ADDED BY METRONOME
+# END ADDED BY METRONOME
 ---
 {{- if not $.Values.enableCertManager }}
 apiVersion: v1
