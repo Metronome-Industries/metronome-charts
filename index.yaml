@@ -1,0 +1,30 @@
+apiVersion: v1
+entries:
+  aws-load-balancer-controller:
+  - apiVersion: v2
+    appVersion: v2.4.7
+    created: "2024-04-02T16:12:58.650845264Z"
+    description: AWS Load Balancer Controller Helm chart for Kubernetes
+    digest: 02850df822fb5034b2364102727c23c6a63596e5980fafaf624486b1adc3e5e0
+    home: https://github.com/aws/eks-charts
+    icon: https://raw.githubusercontent.com/aws/eks-charts/master/docs/logo/aws.png
+    keywords:
+    - eks
+    - alb
+    - load balancer
+    - ingress
+    - nlb
+    maintainers:
+    - email: kishorj@users.noreply.github.com
+      name: kishorj
+      url: https://github.com/kishorj
+    - email: m00nf1sh@users.noreply.github.com
+      name: m00nf1sh
+      url: https://github.com/m00nf1sh
+    name: aws-load-balancer-controller
+    sources:
+    - https://github.com/aws/eks-charts
+    urls:
+    - aws-load-balancer-controller-1.4.8-metro.0.tgz
+    version: 1.4.8-metro.0
+generated: "2024-04-02T16:12:58.648363805Z"
