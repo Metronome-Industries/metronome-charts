@@ -19,4 +19,4 @@ maintainers:
 name: aws-load-balancer-controller
 sources:
 - https://github.com/aws/eks-charts
-version: 1.4.8-metro.0
+version: 1.4.8-metro.1
