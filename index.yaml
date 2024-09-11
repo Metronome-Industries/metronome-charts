@@ -3,7 +3,7 @@ entries:
   aws-load-balancer-controller:
   - apiVersion: v2
     appVersion: v2.4.7
-    created: "2024-04-02T16:24:51.209118677Z"
+    created: "2024-09-11T09:16:04.717412-06:00"
     description: AWS Load Balancer Controller Helm chart for Kubernetes
     digest: c36aaa647cd8980a69d9195f67ae4f7f573511dca980fb0732b2ea41c21b191d
     home: https://github.com/aws/eks-charts
@@ -29,7 +29,7 @@ entries:
     version: 1.4.8-metro.1
   - apiVersion: v2
     appVersion: v2.4.7
-    created: "2024-04-02T16:24:51.206721135Z"
+    created: "2024-09-11T09:16:04.71471-06:00"
     description: AWS Load Balancer Controller Helm chart for Kubernetes
     digest: 02850df822fb5034b2364102727c23c6a63596e5980fafaf624486b1adc3e5e0
     home: https://github.com/aws/eks-charts
@@ -53,4 +53,15 @@ entries:
     urls:
     - aws-load-balancer-controller-1.4.8-metro.0.tgz
     version: 1.4.8-metro.0
-generated: "2024-04-02T16:24:51.204152177Z"
+  grafana-annotator:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-09-11T09:16:04.719919-06:00"
+    description: A Helm chart for Kubernetes
+    digest: 6ba631956e8f6d9a0f73828edd7c5045b27d350cbfa1c2e1c0657b0824a13639
+    name: grafana-annotator
+    type: application
+    urls:
+    - grafana-annotator-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-09-11T09:16:04.712059-06:00"
