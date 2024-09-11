@@ -1,0 +1,23 @@
+replicaCount: 1
+backoffLimit: 3
+
+image:
+  repository: alpine/curl
+  tag: 8.9.1
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+resources:
+  limits:
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+tolerations: []
+
+affinity: {}
+
+secret: {}

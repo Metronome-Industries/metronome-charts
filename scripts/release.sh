@@ -7,6 +7,10 @@ fatal() {
     exit 1
 }
 
+if [[ -z "$1" ]]; then
+    fatal "USAGE: release.sh [chart-name]"
+fi
+
 if [[ -z "${GITHUB_TOKEN}" ]] ; then
     fatal "Missing GITHUB_TOKEN env variable"
 fi
@@ -22,12 +26,12 @@ git config --global user.email "${USER}@metronome.com"
 git config --global user.name "${USER}"
 git fetch --tags
 
-version=`yq eval '.version' ./aws-load-balancer-controller/Chart.yaml`
-version=aws-load-balancer-controller-${version}
+version=`yq eval '.version' ./${1}/Chart.yaml`
+version=${1}-${version}
 git tag ${version}
 git push origin ${version}
 
-helm package ./aws-load-balancer-controller
+helm package ./${1}
 git checkout gh-pages
 git pull origin gh-pages
 git add *.tgz

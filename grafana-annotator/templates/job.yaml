@@ -1,0 +1,59 @@
+{{- $_ := .Values.grafanaAnnotation | required ".Values.grafanaAnnotation is required." -}}
+{{- $_ := .Values.grafanaURL | required ".Values.grafanaURL is required." -}}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "grafana-annotator.fullname" $ }}
+  labels:
+    app: {{ include "grafana-annotator.name" $ }}
+    chart: {{ include "grafana-annotator.chart" $ }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    "helm.sh/hook": post-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - curl
+            - --fail
+            - -H
+            - "content-type: application/json"
+            - -H
+            - "Authorization: Bearer $(GRAFANA_SA_TOKEN)"
+            - --data
+            - >
+              {{ toJson .Values.grafanaAnnotation }}
+            - {{ .Values.grafanaURL }}/api/annotations
+          envFrom:
+          - secretRef:
+              name: {{ include "grafana-annotator.fullname" $ }}-token
+
+          {{- with $.Values.env }}
+          env:
+          {{- range $k, $v := $.Values.env }}
+            - name: {{ $k }}
+              value: "{{ $v }}"
+          {{- end }}
+          {{- end }}
+          resources:
+{{ toYaml $.Values.resources | indent 12 }}
+{{- with $.Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+{{- end }}
+{{- with $.Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+{{- end }}
+{{- with $.Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+{{- end }}
