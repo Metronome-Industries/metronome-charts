@@ -55,6 +55,7 @@ webhooks:
     resources:
     - pods
   sideEffects: None
+{{- if not $.Values.webhookConfig.disableIngressValidation }}
 - clientConfig:
     {{ if not $.Values.enableCertManager -}}
     caBundle: {{ $tls.caCert }}
@@ -95,6 +96,7 @@ webhooks:
     {{- toYaml .Values.objectSelector.matchLabels | nindent 6 }}
     {{- end }}
   {{- end }}
+{{- end }}
 # END ADDED BY METRONOME
 ---
 apiVersion: admissionregistration.k8s.io/v1

@@ -189,6 +189,10 @@ webhookNamespaceSelectors:
 #   values:
 #   - enabled
 
+# disable the validating webhook requests
+webhookConfig:
+  disableIngressValidation: false
+
 # keepTLSSecret specifies whether to reuse existing TLS secret for chart upgrade
 keepTLSSecret: true
 
