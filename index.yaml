@@ -2,8 +2,34 @@ apiVersion: v1
 entries:
   aws-load-balancer-controller:
   - apiVersion: v2
+    appVersion: v2.5.4
+    created: "2024-12-04T14:43:12.458693-07:00"
+    description: AWS Load Balancer Controller Helm chart for Kubernetes
+    digest: 9f8dadd013edcea9f7ad8485e2373d22bdb8fc4c815014ce6c8689ce79d30834
+    home: https://github.com/aws/eks-charts
+    icon: https://raw.githubusercontent.com/aws/eks-charts/master/docs/logo/aws.png
+    keywords:
+    - eks
+    - alb
+    - load balancer
+    - ingress
+    - nlb
+    maintainers:
+    - email: kishorj@users.noreply.github.com
+      name: kishorj
+      url: https://github.com/kishorj
+    - email: m00nf1sh@users.noreply.github.com
+      name: m00nf1sh
+      url: https://github.com/m00nf1sh
+    name: aws-load-balancer-controller
+    sources:
+    - https://github.com/aws/eks-charts
+    urls:
+    - aws-load-balancer-controller-1.5.5-metro.0.tgz
+    version: 1.5.5-metro.0
+  - apiVersion: v2
     appVersion: v2.4.7
-    created: "2024-10-01T14:08:28.464936+01:00"
+    created: "2024-12-04T14:43:12.457058-07:00"
     description: AWS Load Balancer Controller Helm chart for Kubernetes
     digest: c5dc406da70f76a8ae13e8016d6ac13319a344d98c658a58909296de19848001
     home: https://github.com/aws/eks-charts
@@ -29,7 +55,7 @@ entries:
     version: 1.4.8-metro.2
   - apiVersion: v2
     appVersion: v2.4.7
-    created: "2024-10-01T14:08:28.463226+01:00"
+    created: "2024-12-04T14:43:12.456035-07:00"
     description: AWS Load Balancer Controller Helm chart for Kubernetes
     digest: c36aaa647cd8980a69d9195f67ae4f7f573511dca980fb0732b2ea41c21b191d
     home: https://github.com/aws/eks-charts
@@ -55,7 +81,7 @@ entries:
     version: 1.4.8-metro.1
   - apiVersion: v2
     appVersion: v2.4.7
-    created: "2024-10-01T14:08:28.458417+01:00"
+    created: "2024-12-04T14:43:12.453233-07:00"
     description: AWS Load Balancer Controller Helm chart for Kubernetes
     digest: 02850df822fb5034b2364102727c23c6a63596e5980fafaf624486b1adc3e5e0
     home: https://github.com/aws/eks-charts
@@ -82,7 +108,7 @@ entries:
   grafana-annotator:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-10-01T14:08:28.46713+01:00"
+    created: "2024-12-04T14:43:12.46133-07:00"
     description: A Helm chart for Kubernetes
     digest: 655f32d8d543ade8e47dbf79e5f4264ed8d91722f33a9c327221e943c89537df
     name: grafana-annotator
@@ -92,7 +118,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-10-01T14:08:28.466081+01:00"
+    created: "2024-12-04T14:43:12.459772-07:00"
     description: A Helm chart for Kubernetes
     digest: 6ba631956e8f6d9a0f73828edd7c5045b27d350cbfa1c2e1c0657b0824a13639
     name: grafana-annotator
@@ -100,4 +126,4 @@ entries:
     urls:
     - grafana-annotator-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-01T14:08:28.381634+01:00"
+generated: "2024-12-04T14:43:12.450527-07:00"
